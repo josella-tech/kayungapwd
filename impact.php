@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Impact | Kayunga District</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="Kayunga District Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-title">Kayunga District</span>
+                    <span class="logo-subtitle">Youth Council</span>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="dropdown">
+                    <button class="nav-link dropbtn">About us <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="about.php#who-we-are">Who We Are</a>
+                        <a href="about.php#team">Our Team</a>
+                        <a href="about.php#objectives">Objectives</a>
+                        <a href="about.php#functions">Functions</a>
+                    </div>
+                </div>
+                <a href="programmes.html" class="nav-link">Programmes</a>
+                <a href="impact.html" class="nav-link active">Our Impact</a>
+                <a href="opportunities.html" class="nav-link">Opportunities</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Our <span class="text-primary">Impact</span></h1>
+            <p>See the difference we've made together</p>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-number">50,000+</div>
+                    <div class="stat-label">Youth Reached</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-project-diagram"></i>
+                    <div class="stat-number">120+</div>
+                    <div class="stat-label">Projects Implemented</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <div class="stat-number">500M+</div>
+                    <div class="stat-label">Funds Disbursed</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-university"></i>
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Sub-counties Covered</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="who-we-are">
+        <div class="container">
+            <div class="section-header">
+                <h2>Project <span class="text-primary">Gallery</span></h2>
+                <p>Highlights of our key projects and activities</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/gallery1.jpg" alt="Youth Training">
+                    <div class="gallery-overlay">
+                        <h3>Vocational Training</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery2.jpg" alt="Health Camp">
+                    <div class="gallery-overlay">
+                        <h3>Health Screening</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery3.jpg" alt="Sports Event">
+                    <div class="gallery-overlay">
+                        <h3>Youth Sports Day</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery4.jpg" alt="Conference">
+                    <div class="gallery-overlay">
+                        <h3>District Conference</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery5.jpg" alt="Clean Up">
+                    <div class="gallery-overlay">
+                        <h3>Community Clean Up</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery6.jpg" alt="Mentorship">
+                    <div class="gallery-overlay">
+                        <h3>Youth Mentorship</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Success <span class="text-primary">Stories</span></h2>
+                <p>Hear from youth who have benefited from our programmes</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/success1.jpg" alt="Success Story">
+                    </div>
+                    <h3>Sarah's Story</h3>
+                    <p class="team-role">Vocational Training Graduate</p>
+                    <p style="padding: 0 20px 20px; color: var(--gray-600); font-size: 0.875rem;">"The skills training programme helped me start my own tailoring business."</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/success2.jpg" alt="Success Story">
+                    </div>
+                    <h3>Joseph's Story</h3>
+                    <p class="team-role">Youth Leader</p>
+                    <p style="padding: 0 20px 20px; color: var(--gray-600); font-size: 0.875rem;">"Through the youth council, I learned leadership skills that changed my life."</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/success3.jpg" alt="Success Story">
+                    </div>
+                    <h3>Grace's Story</h3>
+                    <p class="team-role">Scholarship Recipient</p>
+                    <p style="padding: 0 20px 20px; color: var(--gray-600); font-size: 0.875rem;">"The scholarship programme enabled me to complete my university education."</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/success4.jpg" alt="Success Story">
+                    </div>
+                    <h3>David's Story</h3>
+                    <p class="team-role">Entrepreneur</p>
+                    <p style="padding: 0 20px 20px; color: var(--gray-600); font-size: 0.875rem;">"With the youth fund, I started my poultry farming business."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Be Part of Our Success Story</h2>
+                <p>Join us in making a difference in the lives of young people.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-white">Partner With Us</a>
+                    <a href="opportunities.html" class="btn btn-outline-white">Volunteer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Kayunga District Logo">
+                        <span>Kayunga District Youth Council</span>
+                    </div>
+                    <p>Working to bring smiles and hope to our district's youth.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.php">About Us</a></li>
+                        <li><a href="programmes.html">Programmes</a></li>
+                        <li><a href="impact.html">Our Impact</a></li>
+                        <li><a href="opportunities.html">Opportunities</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Kayunga District</li>
+                        <li><i class="fas fa-phone"></i> +256 123 456789</li>
+                        <li><i class="fas fa-envelope"></i> info@kayungayouth.go.ug</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kayunga District Youth Council. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    var isLoggedIn = localStorage.getItem('user_logged_in') === 'true';
+    (function() {
+        if (isLoggedIn) {
+            var signInLink = document.querySelector('.nav-link-auth');
+            var joinLink = document.querySelector('.btn-nav');
+            if (signInLink) signInLink.outerHTML = '<a href="user-dashboard.html" class="nav-link">Dashboard</a>';
+            if (joinLink) joinLink.outerHTML = '<a href="index.html" onclick="doLogout()" class="nav-link btn-nav">Logout</a>';
+        }
+    })();
+    function doLogout() {
+        localStorage.removeItem('user_logged_in');
+        localStorage.removeItem('user_email');
+        localStorage.removeItem('user_first_name');
+        window.location.href = 'index.html';
+    }
+    </script>
+</body>
+</html>

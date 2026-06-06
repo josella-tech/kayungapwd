@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our History | Kayunga District</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="Kayunga District Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-title">Kayunga District</span>
+                    <span class="logo-subtitle">Youth Council</span>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="dropdown">
+                    <button class="nav-link dropbtn">About us <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="about.php#who-we-are">Who We Are</a>
+                        <a href="about.php#team">Our Team</a>
+                        <a href="about.php#objectives">Objectives</a>
+                        <a href="about.php#functions">Functions</a>
+                    </div>
+                </div>
+                <a href="programmes.html" class="nav-link">Programmes</a>
+                <a href="impact.html" class="nav-link">Our Impact</a>
+                <a href="opportunities.html" class="nav-link">Opportunities</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="login.html" class="nav-link nav-link-auth">Sign In</a>
+                <a href="register.html" class="nav-link btn-nav">Join Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Our <span class="text-primary">History</span></h1>
+            <p>The Story of Kayunga District Youth Council</p>
+        </div>
+    </section>
+
+    <section class="history-section">
+        <div class="container">
+            <div class="history-timeline" id="historyContent">
+                <div class="loading">Loading history...</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Be Part of Our Future</h2>
+                <p>Join us in building a brighter future for Kayunga's youth.</p>
+                <div class="cta-buttons">
+                    <a href="register.html" class="btn btn-white">Join Today</a>
+                    <a href="contact.html" class="btn btn-outline-white">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Kayunga District Logo">
+                        <span>Kayunga District Youth Council</span>
+                    </div>
+                    <p>Working to bring smiles and hope to our district's youth.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.php">About Us</a></li>
+                        <li><a href="programmes.html">Programmes</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Kayunga District</li>
+                        <li><i class="fas fa-phone"></i> +256 123 456789</li>
+                        <li><i class="fas fa-envelope"></i> info@kayungayouth.go.ug</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kayunga District Youth Council. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        async function loadHistory() {
+            try {
+                const response = await fetch('backend/api/history.php');
+                const data = await response.json();
+                const historyContent = document.getElementById('historyContent');
+                
+                if (data.success && data.history.length > 0) {
+                    let html = '';
+                    data.history.forEach((item, index) => {
+                        const side = index % 2 === 0 ? 'left' : 'right';
+                        html += `
+                            <div class="timeline-item ${side}">
+                                <div class="timeline-content">
+                                    <span class="timeline-year">${item.year || ''}</span>
+                                    <span class="timeline-category">${item.category}</span>
+                                    <h3>${item.title}</h3>
+                                    <p>${item.content}</p>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    historyContent.innerHTML = html;
+                } else {
+                    historyContent.innerHTML = `
+                        <div class="history-placeholder">
+                            <h3>The Journey So Far</h3>
+                            <p>Kayunga District Youth Council was established with a vision to empower young people and give them a voice in district development.</p>
+                            <p>Over the years, we have grown from a small group of passionate youth into a movement that touches every corner of our district.</p>
+                            <h3>Our Foundation</h3>
+                            <p>Our journey began with a commitment to: Youth empowerment, Community engagement, Leadership development, and Sustainable growth.</p>
+                            <h3>Looking Forward</h3>
+                            <p>Every youth in Kayunga has the potential to be a leader. We are building a platform where voices are heard and dreams are supported.</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                document.getElementById('historyContent').innerHTML = `
+                    <div class="history-placeholder">
+                        <h3>The Journey So Far</h3>
+                        <p>Kayunga District Youth Council was established with a vision to empower young people and give them a voice in district development.</p>
+                        <p>Over the years, we have grown from a small group of passionate youth into a movement that touches every corner of our district.</p>
+                    </div>
+                `;
+            }
+        }
+        loadHistory();
+    </script>
+    <script>
+    var isLoggedIn = localStorage.getItem('user_logged_in') === 'true';
+    (function() {
+        if (isLoggedIn) {
+            var signInLink = document.querySelector('.nav-link-auth');
+            var joinLink = document.querySelector('.btn-nav');
+            if (signInLink) signInLink.outerHTML = '<a href="user-dashboard.html" class="nav-link">Dashboard</a>';
+            if (joinLink) joinLink.outerHTML = '<a href="index.html" onclick="doLogout()" class="nav-link btn-nav">Logout</a>';
+        }
+    })();
+    function doLogout() {
+        localStorage.removeItem('user_logged_in');
+        localStorage.removeItem('user_email');
+        localStorage.removeItem('user_first_name');
+        window.location.href = 'index.html';
+    }
+    </script>
+</body>
+</html>

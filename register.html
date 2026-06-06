@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Kayunga District Youth Council</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="auth.css">
+    <style>
+        .welcome-message {
+            background: linear-gradient(135deg, #fcd34d 0%, #f59e0b 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            text-align: center;
+            display: none;
+        }
+        .welcome-message.show {
+            display: block;
+            animation: slideDown 0.5s ease;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .welcome-message h2 {
+            color: #1a1a2e;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+        .welcome-message p {
+            color: #374151;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .welcome-message ul {
+            text-align: left;
+            margin-top: 15px;
+            padding-left: 10px;
+        }
+        .welcome-message li {
+            color: #374151;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            list-style: none;
+            position: relative;
+            padding-left: 24px;
+        }
+        .welcome-message li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #16a34a;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <a href="index.html" class="auth-logo">
+                    <img src="images/logo.png" alt="Kayunga District">
+                </a>
+                <h1>Create Account</h1>
+                <p>Join Kayunga District Youth Council</p>
+            </div>
+            
+            <div class="welcome-message" id="welcomeMessage">
+                <h2 id="welcomeTitle"></h2>
+                <p id="welcomeText"></p>
+                <ul id="featuresList"></ul>
+            </div>
+            
+            <div id="message"></div>
+            
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-field">
+                        <input type="password" id="password" name="password" placeholder="Create a strong password" required>
+                        <button type="button" class="toggle-password" onclick="togglePassword('password')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="password-requirements">
+                        <span id="lengthReq"><i class="fas fa-circle"></i> At least 8 characters</span>
+                        <span id="upperReq"><i class="fas fa-circle"></i> One uppercase letter</span>
+                        <span id="lowerReq"><i class="fas fa-circle"></i> One lowercase letter</span>
+                        <span id="numberReq"><i class="fas fa-circle"></i> One number</span>
+                        <span id="specialReq"><i class="fas fa-circle"></i> One special character (@$!%*?&)</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm_password">Confirm Password</label>
+                    <div class="password-field">
+                        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+                        <button type="button" class="toggle-password" onclick="togglePassword('confirm_password')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="terms" required>
+                        <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-full" id="submitBtn">Create Account</button>
+            </form>
+            
+            <div class="auth-footer">
+                <p>Already have an account? <a href="login.html">Sign In</a></p>
+            </div>
+            
+            <div class="auth-back">
+                <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Website</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        const passwordInput = document.getElementById('password');
+        const confirmInput = document.getElementById('confirm_password');
+        const welcomeDiv = document.getElementById('welcomeMessage');
+        const featuresList = document.getElementById('featuresList');
+        
+        passwordInput.addEventListener('input', validatePassword);
+        
+        function validatePassword() {
+            const password = passwordInput.value;
+            const requirements = {
+                length: password.length >= 8,
+                upper: /[A-Z]/.test(password),
+                lower: /[a-z]/.test(password),
+                number: /[0-9]/.test(password),
+                special: /[@$!%*?&]/.test(password)
+            };
+            
+            updateRequirement('lengthReq', requirements.length);
+            updateRequirement('upperReq', requirements.upper);
+            updateRequirement('lowerReq', requirements.lower);
+            updateRequirement('numberReq', requirements.number);
+            updateRequirement('specialReq', requirements.special);
+            
+            return Object.values(requirements).every(Boolean);
+        }
+        
+        function updateRequirement(id, valid) {
+            const element = document.getElementById(id);
+            if (valid) {
+                element.classList.add('valid');
+                element.innerHTML = '<i class="fas fa-check-circle"></i> ' + element.textContent.replace('fa-circle', 'fa-check-circle').replace('One ', '');
+            } else {
+                element.classList.remove('valid');
+            }
+        }
+        
+        function togglePassword(fieldId) {
+            const input = document.getElementById(fieldId);
+            const btn = input.nextElementSibling;
+            const icon = btn.querySelector('i');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+        
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const password = passwordInput.value;
+            const confirmPassword = confirmInput.value;
+            const messageDiv = document.getElementById('message');
+            
+            if (!validatePassword()) {
+                messageDiv.innerHTML = '<div class="alert error">Please meet all password requirements</div>';
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                messageDiv.innerHTML = '<div class="alert error">Passwords do not match</div>';
+                return;
+            }
+            
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Creating your account...';
+            
+            const formData = new URLSearchParams();
+            formData.append('email', document.getElementById('email').value);
+            formData.append('password', password);
+            formData.append('confirm_password', confirmPassword);
+            
+            try {
+                const response = await fetch('backend/api/register.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: formData
+                });
+                const data = await response.json();
+                
+                if (data.success) {
+                    localStorage.setItem('user_logged_in', 'true');
+                    localStorage.setItem('user_email', document.getElementById('email').value);
+                    localStorage.setItem('user_first_name', data.user_first_name || '');
+                    localStorage.setItem('user_id', data.user_id || '');
+                    
+                    messageDiv.innerHTML = '<div class="alert success">Account created successfully!</div>';
+                    
+                    document.getElementById('welcomeTitle').textContent = '🎉 ' + data.welcome_title;
+                    document.getElementById('welcomeText').textContent = data.welcome_message;
+                    
+                    featuresList.innerHTML = '';
+                    if (data.features) {
+                        data.features.forEach(feature => {
+                            const li = document.createElement('li');
+                            li.textContent = feature;
+                            featuresList.appendChild(li);
+                        });
+                    }
+                    
+                    welcomeDiv.classList.add('show');
+                    
+                    setTimeout(() => {
+                        window.location.href = data.redirect || 'edit-profile.html';
+                    }, 3000);
+                } else {
+                    messageDiv.innerHTML = '<div class="alert error">' + data.message + '</div>';
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Create Account';
+                }
+            } catch (error) {
+                messageDiv.innerHTML = '<div class="alert error">An error occurred. Please try again.</div>';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Create Account';
+            }
+        });
+    </script>
+</body>
+</html>

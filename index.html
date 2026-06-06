@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayunga District | Official Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="Kayunga District Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-title">Kayunga District</span>
+                    <span class="logo-subtitle">Youth Council</span>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <div class="dropdown">
+                    <button class="nav-link dropbtn">About us <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="about.html#who-we-are">Who We Are</a>
+                        <a href="history.html">Our History</a>
+                        <a href="administration.html">Administration</a>
+                        <a href="about.html#team">Our Team</a>
+                        <a href="about.html#objectives">Objectives</a>
+                        <a href="about.html#functions">Functions</a>
+                    </div>
+                </div>
+                <a href="programmes.html" class="nav-link">Programmes</a>
+                <a href="impact.html" class="nav-link">Our Impact</a>
+                <a href="opportunities.html" class="nav-link">Opportunities</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="login.html" class="nav-link nav-link-auth">Sign In</a>
+                <a href="register.html" class="nav-link btn-nav">Join Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-slider" id="heroSlider">
+            <div class="hero-slide active" style="background-image: url('images/team1.jpg')">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h3>Welcome to Kayunga District</h3>
+                    <h1>Empowering Youth for Development</h1>
+                    <p>Working together to build a brighter future for all young people in Kayunga District</p>
+                    <div class="hero-buttons">
+                        <a href="about.html" class="btn btn-outline">Learn More</a>
+                        <a href="register.html" class="btn btn-primary">Get Involved</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('images/team_69f0cefc2957c.jpg')">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1>Our Vision</h1>
+                    <p>An empowered youth population that effectively contributes to and benefits from district development.</p>
+                    <div class="hero-buttons">
+                        <a href="about.html" class="btn btn-outline">Learn More</a>
+                        <a href="programmes.html" class="btn btn-primary">View Programmes</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('images/team_69f0b96d77ab4.jpg')">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1>Our Mission</h1>
+                    <p>To create an enabling environment where young people participate in socio-economic development.</p>
+                    <div class="hero-buttons">
+                        <a href="about.html" class="btn btn-outline">Learn More</a>
+                        <a href="opportunities.html" class="btn btn-primary">Opportunities</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="slider-arrow left" onclick="changeSlide(-1)">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-arrow right" onclick="changeSlide(1)">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="slider-dots">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+        </div>
+    </section>
+
+    <section class="chairman-message">
+        <div class="container">
+            <div class="message-grid">
+                <div class="message-image">
+                    <img src="images/team1.jpg" alt="District Chairman">
+                </div>
+                <div class="message-content">
+                    <h2>Message from the <span class="text-primary">Chairman</span></h2>
+                    <p>Welcome to the official website of Kayunga District Youth Council. As Chairman, I'm honored to lead this platform for young people in Kayunga to voice their aspirations and contribute to our district's development.</p>
+                    <p>Our mission is to engage all youth across Kayunga District - rural and urban, educated and non-educated - ensuring everyone can realize their potential. We empower youth to be leaders of change by ensuring their perspectives are integrated into district policies and development plans.</p>
+                    <p>Join us in building a prosperous Kayunga driven by the strength and potential of its youth.</p>
+                    <p class="signature">Hon.BEINOMUGISHA MABLE<br>District Youth Chairman<br>Kayunga District</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section section-primary-bg">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Youth Reached</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-project-diagram"></i>
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Projects Implemented</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <div class="stat-number">6M+</div>
+                    <div class="stat-label">Funds Disbursed</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-university"></i>
+                    <div class="stat-number">13</div>
+                    <div class="stat-label">Sub-counties Covered</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners-section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Partners</h2>
+                <p>We work with various partners to achieve our goals</p>
+            </div>
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <i class="fas fa-building"></i>
+                    <span>Government</span>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-globe-africa"></i>
+                    <span>UN Agencies</span>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-handshake"></i>
+                    <span>NGOs</span>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-school"></i>
+                    <span>Schools & District UNSA Body</span>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-business-time"></i>
+                    <span>Private Sector</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="news-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest <span class="text-primary">Updates</span></h2>
+                <p>Stay informed about what happening in Kayunga District</p>
+            </div>
+            <div class="news-grid" id="newsGrid">
+                <!-- News loaded dynamically from API -->
+                <div class="loading">Loading updates...</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Join Us in Building a Better Future</h2>
+                <p>Whether you want to volunteer, partner, or access our programmes, we'd love to hear from you.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-white">Contact Us</a>
+                    <a href="opportunities.html" class="btn btn-outline-white">Explore Opportunities</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Kayunga District Logo">
+                        <span>Kayunga District Youth Council</span>
+                    </div>
+                    <p>Working to bring smiles and hope to our district's youth through empowerment, education, and engagement.</p>
+                    <div class="social-links" id="socialLinks">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="history.html">Our History</a></li>
+                        <li><a href="administration.html">Administration</a></li>
+                        <li><a href="programmes.html">Programmes</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Kayunga District Headquarters</li>
+                        <li><i class="fas fa-phone"></i> +256 123 456789</li>
+                        <li><i class="fas fa-envelope"></i> info@kayungayouth.go.ug</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kayunga District Youth Council. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    (function() {
+        var isLoggedIn = localStorage.getItem('user_logged_in') === 'true';
+        
+        if (isLoggedIn) {
+            var signInLink = document.querySelector('.nav-link-auth');
+            var joinLink = document.querySelector('.btn-nav');
+            
+            if (signInLink) signInLink.outerHTML = '<a href="user-dashboard.html" class="nav-link">Dashboard</a>';
+            if (joinLink) joinLink.outerHTML = '<a href="index.html" onclick="doLogout()" class="nav-link btn-nav">Logout</a>';
+}
+    function doLogout() {
+        fetch('backend/api/logout.html', {method: 'POST'}).then(function() {
+            localStorage.removeItem('user_logged_in');
+            localStorage.removeItem('user_email');
+            localStorage.removeItem('user_first_name');
+            window.location.href = 'index.html';
+        }).catch(function() {
+            localStorage.removeItem('user_logged_in');
+            localStorage.removeItem('user_email');
+            localStorage.removeItem('user_first_name');
+            window.location.href = 'index.html';
+        });
+    }
+    
+    // Load news from API
+    async function loadNews() {
+        try {
+            const response = await fetch('backend/api/public-news.html?limit=6');
+            const data = await response.json();
+            const newsGrid = document.getElementById('newsGrid');
+            
+            if (data.success && data.news && data.news.length > 0) {
+                newsGrid.innerHTML = data.news.map(item => {
+                    const date = new Date(item.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                    const imageUrl = item.image ? 'uploads/news/' + item.image : 'images/logo.png';
+                    return '<article class="news-card"><div class="news-image"><img src="' + imageUrl + '" alt="' + item.title + '" onerror="this.src=\'images/logo.png\'"></div><div class="news-content"><div class="news-date">' + date + '</div><h3>' + item.title + '</h3><p>' + (item.summary || '').substring(0, 100) + '...</p><a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a></div></article>';
+                }).join('');
+            } else {
+                newsGrid.innerHTML = '<p style="text-align:center;color:#999;padding:40px;">No news updates yet. Check back soon!</p>';
+            }
+        } catch (error) {
+            document.getElementById('newsGrid').innerHTML = '<p style="text-align:center;color:#999;padding:40px;">Unable to load news</p>';
+        }
+    }
+    
+    // Load team from API
+    async function loadTeam() {
+        try {
+            const response = await fetch('backend/api/public-team.html');
+            const data = await response.json();
+            const teamGrid = document.getElementById('homeTeamGrid');
+            
+            if (data.success && data.team && data.team.length > 0) {
+                teamGrid.innerHTML = data.team.map(member => {
+                    const photoUrl = member.photo ? 'uploads/team/' + member.photo : 'images/logo.png';
+                    return '<div class="team-card"><div class="team-image"><img src="' + photoUrl + '" alt="' + member.name + '" onerror="this.src=\'images/logo.png\'"></div><div class="team-info"><h3>' + member.name + '</h3><p class="team-role">' + (member.position || '') + '</p><p class="team-bio">' + (member.bio || '').substring(0, 60) + '...</p></div></div>';
+                }).join('');
+            }
+        } catch (error) {
+            console.error('Team load error:', error);
+        }
+    }
+
+    window.addEventListener('load', function() {
+        loadNews();
+        loadTeam();
+    });
+    
+    // Load social media links
+    async function loadSocialMedia() {
+        try {
+            const response = await fetch('backend/api/public-social.html');
+            const data = await response.json();
+            const socialLinks = document.getElementById('socialLinks');
+            
+            if (data.success && data.social) {
+                const s = data.social;
+                let html = '';
+                if (s.facebook) html += '<a href="' + s.facebook + '" target="_blank"><i class="fab fa-facebook-f"></i></a>';
+                if (s.twitter) html += '<a href="' + s.twitter + '" target="_blank"><i class="fab fa-twitter"></i></a>';
+                if (s.youtube) html += '<a href="' + s.youtube + '" target="_blank"><i class="fab fa-youtube"></i></a>';
+                if (s.instagram) html += '<a href="' + s.instagram + '" target="_blank"><i class="fab fa-instagram"></i></a>';
+                if (s.linkedin) html += '<a href="' + s.linkedin + '" target="_blank"><i class="fab fa-linkedin-in"></i></a>';
+                if (s.tiktok) html += '<a href="' + s.tiktok + '" target="_blank"><i class="fab fa-tiktok"></i></a>';
+                if (s.whatsapp) html += '<a href="https://wa.me/' + s.whatsapp.replace(/\D/g, '') + '" target="_blank"><i class="fab fa-whatsapp"></i></a>';
+                if (html) socialLinks.innerHTML = html;
+            }
+        } catch (error) {
+            console.log('Unable to load social media links');
+        }
+    }
+    
+    window.addEventListener('load', loadSocialMedia);
+    </script>
+</body>
+</html>
